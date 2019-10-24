@@ -1,0 +1,17 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+	<ribbon startFromScratch="false">
+		<tabs>
+			<tab id="customTab" label="WIZZCAD">
+				<group id="customGroup1" label=" ">
+					<button id="customButton1" label="Login" image="LOGIN" size="large" onAction="btLogin" />
+				</group>
+				<group id="customGroup2" label=" ">
+					<button id="customButton2" label="Import" image="IMPORT" size="large" onAction="btImportWizzcad" />
+				</group>
+				<group id="customGroup3" label=" ">
+					<button id="customButton3" label="Export" image="EXPORT" size="large" onAction="btExportWizzcad" />					
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
+</customUI>

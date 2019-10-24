@@ -1,0 +1,15 @@
+<?xml  version="1.0" encoding="UTF-8"?>
+<PersistentObject>
+<CUIDESIGN PersistentID="8ae5b13b" ClassName="CUIDESIGN">
+    <DESIGNNUMBER DataType="8">ABCDE</DESIGNNUMBER>
+    <AVGCALCTIME DataType="5">654557</AVGCALCTIME>
+	<DBDATE DataType="8">2014/08/14</DBDATE>
+    <DBTIME DataType="8">03:35:28</DBTIME>
+  </CUIDESIGN>
+  <CUIROOT PersistentID="9c682313" ClassName="CUIROOT">
+    <DESIGNNUMBER DataType="8">ABCDEF</DESIGNNUMBER>
+    <AVGCALCTIME DataType="5">654557</AVGCALCTIME>
+    <DBDATE DataType="8">2015/08/14</DBDATE>
+    <DBTIME DataType="8">04:35:28</DBTIME>
+   </CUIROOT>
+   </PersistentObject>

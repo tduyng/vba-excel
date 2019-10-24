@@ -1,0 +1,202 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+<!-- Indiquez True pour masquer tous les autres onglets standards-->
+<ribbon startFromScratch="false">
+
+<tabs>
+  <!-- Crée un onglet personnalisé: -->
+  <!-- L'onglet va se positionner automatiquement à la fin du ruban. -->
+  <!-- Utilisez insertAfterMso="NomOngletPrédéfini" pour préciser l'emplacement de l'onglet -->
+  <tab id="tabGTM" label="GTM Bâtiment" visible="true">
+
+  
+  
+    <!-- Crée un groupe WIZZCAD -->  
+    <group id="grWizzcad" label="WIZZCAD">
+
+      <!-- Crée un bouton: -->
+      <!--onAction="ProcLancement" définit la macro qui va être déclenchée lorsque vous allez cliquer sur le bouton -->
+    
+      <!--imageMso="StartAfterPrevious" définit une image de la galerie Office qui va s'afficher sur le bouton. -->
+	<!--(consultez la FAQ Excel "Comment retrouver l'ID de chaque contrôle du ruban ?" pour plus de détails). -->
+      <!-- Nota: il est aussi possible d'ajouter des images externes pour personnaliser les boutons -->
+      <button id="btLogin" label="Connexion" screentip="Connexion WizzCAD"
+      onAction="btAiLogin" 
+      supertip="Utiliser ce bouton pour la connexion avec le web WizzCAD." 
+      size="large" image="WIZZCAD" />
+
+      <!-- Crée un deuxième bouton -->	
+      <button id="btImport" label="Import" screentip="Import WizzCAD"
+      onAction="btAiImport" size="normal" 
+      supertip="Ce buton permet d'importer des données via le web WizzCAD." 
+      image="IMPORT" />
+
+	        <!-- Crée un troisième bouton -->	
+      <button id="btExport" label="Export" screentip="Export WizzCAD"
+      onAction="btAiExport" size="normal" 
+      supertip="Ce buton permet d'exporter des données via le web WizzCAD." 
+      image="EXPORT" />
+	  
+    </group>
+	
+	
+	
+	<!-- Crée groupe PLANNING -->  
+    <group id="grPlanning" label="PLANNING">
+
+	  <!-- 1er button Photo Planning-->
+      <button id="btPhotoPlanning" label="Photo Planning" screentip="Photo du Planning"
+      onAction="btAiPhotoPlanning" 
+      supertip="Photo du Planning pour le pointage du planning prévisionnel." 
+      size="large" imageMso="Camera" />
+	  
+      <!-- 2ere button Pointage Planning-->	
+      <button id="btMAJPointage" label="Pointage Planning" screentip="Pointage du planning des travaux du logement"
+      onAction="btAiMAJPointage" size="large" 
+      supertip="Ce buton permet de mettre à jour le pointage du planning réalisé jusqu'à la date du jour dans la feuille Information Générales" 
+      imageMso="CalendarViewGallery" />
+	  
+	  <separator id="grPlanningSep01"/>
+	  <!-- 3ere button Créer ou MAJ metier-->	
+      <button id="btMAJMetier" label="MAJ Metiers" screentip="Mise à jour les noms de métier"
+      onAction="btAiMAJMetier" size="normal" 
+      supertip="Ce buton permet de mettre à jour les noms de métier dans la feuille Information Générales et la feuille Indicators après les avoir changé dans la feuille Paramètrage." 
+      imageMso="CreateFormMoreFormsGallery" />	  
+	  
+	  <!-- 4ere button MAJ données locataires -->	
+      <button id="btDataLocataire" label="MAJ Données Locataire" screentip="Mise à jour des données du locataire"
+      onAction="btAiDataLocataire" size="normal" 
+      supertip="Ce buton permet de synchroniser tous les données du locataire dans la feuille Planning et la feuille Infos Complément par rapport à celles de la feuille Informations Genérales." 
+      imageMso="ArrowStyleGallery" />	  
+	  
+	  <!-- 5ere button Refresh comptage-->
+      <button id="btRefreshComptage" label="Rafraîchir Comptage" screentip="Rafraîchir le comptage"
+      onAction="btAiRefreshComptage" 
+      supertip=" Rafraîchir le comptage pour le calcul ou pour la mise à jour le comptage des travaux quotidiens par sous-traitant." 
+      size="normal" imageMso="CalculateNow" />
+	  
+	  <!-- Separator -->
+	  <separator id="grPlanningSep02"/>
+	  
+	        <!-- 6ere button Avis passage-->	
+      <button id="btAvisPassage" label="Avis Passage" screentip="Avis de passage"
+      onAction="btAiAvisPassage" size="normal" 
+      supertip="Ce buton permet de créer ou d'éditer des avis de passage concernant les logements sélectionés." 
+      image="PRINT1" />  <!-- or AppendOnlyControl - ApplicationOptionDialog -->
+	  
+	        <!-- 7ere button Planning sous-traitants-->	
+      <button id="btPlanningST" label="Planning Sous-Traitants" screentip="Planning sous-traitants"
+      onAction="btAiPlanningST" size="normal" 
+      supertip="Ce buton permet d'éditer des listes d'intervention hebdomadaires par sous-traitants, liaisonnées avec le planning à jour." 
+      image="PRINT2" />  
+    </group>
+	
+	
+	<!-- Crée groupe EDITION -->  
+    <group id="grEdit" label="EDITION">
+
+	  <!-- 1er button -->
+      <button id="btDeleteAvis" label="Supprimer Avis Passage" screentip="Supprimer tous avis de passage sélectionnés"
+      onAction="btAiDeleteAvis" 
+      supertip="Ce buton permet de supprimer tous les avis de passage sélectionnés dans la feuille Planning." 
+      size="normal" imageMso="DeleteColumnsOneNote" />
+	  
+      <!-- 2ere button -->	
+
+	  
+	  <!-- 3ere button -->
+
+	  
+	  <!-- 4ere button -->	
+
+	  
+	  <!-- 5ere button -->	
+
+	  
+    </group>
+	
+	
+	<!-- Crée groupe Mise à jour et mise en form les feuilles -->  
+    <group id="grMiseEnForm" label="MISE EN FORM">
+
+	  <!-- 1er button -->
+      <button id="btMEFPlanning" label="MEF Planning" screentip="Mise en form  pour la feuille Planning"
+      onAction="btAiMEFPlanning" 
+      supertip="Ce buton permet de mettre en form manuellement pour la feuille Planning." 
+      size="normal" imageMso="ControlPaddingGallery" />
+	  
+	  <!-- 2ere button -->
+      <button id="btMEFInfoGen" label="MEF Info Gen" screentip="Mise en form  pour la feuille Info Générales"
+      onAction="btAiMEFInfoGen" 
+      supertip="Ce buton permet de mettre en form manuellement pour la feuille Information Générales." 
+      size="normal" imageMso="ControlPaddingMedium" />
+	  
+	  
+    </group>
+	
+		<!-- Crée groupe checkbox Dialogue AUTO OU PAS -->  
+    <group id="grDialogue" label="FONCTION AUTO">
+               <!-- Check box 1 -->
+			   <checkBox id="ckxAutoMEFPlanning"
+                  label="Auto MEF Planning"  
+                  onAction="ckxAiMEFPlanning" />
+				  <!-- Check box 2 -->
+			   <checkBox id="ckxAutoMEFInfoGen"
+                  label="Auto MEF Info Gen"  
+                  onAction="ckxAiAutoMEFInfoGen" />
+				  
+			   <!-- Check box 3 -->
+			   <checkBox id="ckxDialInfoComp"
+                  label="Dial Info Comp"  
+                  onAction="ckxAiDialInfoComp" />
+				 <!-- Check box 4 -->
+				<checkBox id="ckxDialMAJBordInfoGen"
+                  label="Dial MAJ bordures Info Gen"  
+                  onAction="ckxAiDialBordureInfoGen" /> 
+				 <!-- Check box 5 -->
+				<checkBox id="ckxDialRecap"
+                  label="Dial Recap"  
+                  onAction="ckxAiDialRecap" />
+
+            </group>
+	
+	
+	<!-- Crée groupe mail-->  
+    <group id="grMail" label="MAIL">
+	  <!-- 1er button -->
+      <button id="btTestMail" label="Contenu Emailing" screentip="Test de message locataire"
+      onAction="btAiTestMail" 
+      supertip="Afficher le message à envoyer aux locataires." 
+      size="normal" image="TESTMAIL" />
+
+      <!-- 2ere button -->	
+      <button id="btSendMail" label="Envoie Mail" screentip="Envoyer les e-mails aux locataires"
+      onAction="btAiSendMail" size="normal" 
+      supertip="Cette fonction est bloqué pour l'instant." 
+      imageMso="CreateEmail" />
+	  
+    </group>
+	
+	
+	    <!-- Crée group AIDE-->  
+    <group id="grAide" label="AIDE">
+
+      <!-- Buutton:  -->
+      <button id="btWebWizzcad" label="Site Web WizzCAD" screentip="Lien du web WizzCAD."
+      onAction="btAiWebWizzcad" 
+      supertip="Visite du site de locataires-WizzCAD." 
+      size="normal" image="WEBWIZZCAD" 
+	  tag = "http://locataires-wizzcad.wizzgestloc.com/" />
+
+      <!-- Crée button Aide -->	
+      <button id="btAide" label="Aide" screentip="Consultez l'aide."
+      onAction="btAiAide" size="normal" 
+      supertip="Consultez le guide d'utilisation." 
+      imageMso="FunctionsLogicalInsertGallery" 
+      tag="https://bitly.vn/67yy/" />
+
+    </group>
+  </tab>
+
+</tabs>
+</ribbon>
+</customUI>
